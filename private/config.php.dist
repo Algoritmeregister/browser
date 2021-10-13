@@ -1,0 +1,26 @@
+<?php
+
+$config = [
+    'organizations'] => [
+        'gemeente-demodam' => [
+            'name' => 'Gemeente Demodam',
+            'client' => [
+                'class' => '\\AlgorithmRegister\\CsvClient',
+                'params' => [
+                    'version' => '0.2',
+                    'url' => 'test.csv'
+                ]
+            ]
+        ],
+        'gemeente-rotterdam' => [
+            "name" => "Gemeente Blobberdam",
+            "client" => [
+                "class" => "\\AlgorithmRegister\\ApiClient",
+                "params" => [
+                    "version" => "0.2",
+                    "url" => "http://172.24.0.1:8081"
+                ]
+            ]
+        ]
+    ]
+];

@@ -1,0 +1,9 @@
+<header class="default-color">
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <p class="tabs">
+        <a {% if tab == "details" %}class="active"{% endif %} href="/details/{{ id }}">details</a>&emsp;
+        <a {% if tab == "updates" %}class="active"{% endif %} href="/details/{{ id }}/log">updates</a>&emsp;
+        <a {% if tab == "discussie" %}class="active"{% endif %} href="#">discussie</a>&emsp;
+    </p>
+</header>

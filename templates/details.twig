@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    {% include "head.twig" %}
+    <body>
+        <div class="default-background">
+            {% include 'nav.twig' %}
+
+            <p style="margin: 20px">
+                <a href="/" style="float: left">← terug naar het register</a>
+            </p>
+
+            {% include "details-header.twig" with {'tab': 'details'} %}
+            
+            {% for category, group in grouped %}
+                <section>
+                    {# <div class="bol">Stap {{ loop.index }}</div> #}
+                    <h2>{{ category }}</h2>
+                    {% for item in group %}
+                        <h3>{{ item.name }}</h3>
+                        <p class="omschrijving">{{ item.description }}</p>
+                        {% if item.type == "bool" %}
+                            <p>{{ item.value }}</p>
+                        {% elseif item.type == "datum" %}
+                            <p>{{ item.value }}</p>
+                        {% elseif item.type == "url" %}
+                            <p><a href="{{ item.value }}" target="_blank">{{ item.value }}</a></p>
+                        {% else %}
+                            <p>{{ item.value }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            {% endfor %}
+        </div>
+        {% include "footer.twig" %}
+    </body>
+</html>

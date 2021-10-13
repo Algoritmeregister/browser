@@ -1,0 +1,13 @@
+<head>
+    <meta name='viewport' content='width=320,initial-scale=1'>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel='image_src' href='/img/algoreg-logo.png'/>
+    <link rel='shortcut icon' type='image/png' href='/img/algoreg-logo.png'>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        window.addEventListener('load', function () {
+            var sp = new URLSearchParams(window.location.search);
+            if (sp.has('m')) alert(sp.get('m'));
+        });
+    </script>
+</head>

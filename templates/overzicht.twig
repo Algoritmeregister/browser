@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    {% include "head.twig" %}
+    <body>
+        <div class="default-background">
+            {% include 'nav.twig' %}
+            <header class="default-color">
+                <h1>Algoritmeregister {{ organization }}</h1>
+                {% include "projectomschrijving.twig" %}
+            </header>
+            <main>
+                <table>
+                    <tr class="default-color">
+                        <th>Naam</th>
+                        <th>Organisatie</th>
+                        <th>Afdeling</th>
+                        <th>Herziening</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th>Categorie</th>
+                        <th></th>
+                    </tr>
+                    {% for item in items %}
+                        <tr>
+                            <td><a href="/details/{{ item.id }}">{{ item.name }}</a></td>
+                            <td>{{ item.organization }}</td>
+                            <td>{{ item.department }}</td>
+                            <td><div class="warning-icon">!</div> {{ item.revision_date }}</td>
+                            <td>{{ item.status }}</td>
+                            <td>{{ item.type }}</td>
+                            <td>{{ item.category }}</td>
+                            <td><a href="{{ item.url }}" target="_blank">.json data</a></td>
+                        </tr>
+                    {% endfor %}
+                    
+                </table>
+            </main>
+        </div>
+        {% include "footer.twig" %}
+    </body>
+</html>
