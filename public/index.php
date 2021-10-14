@@ -23,14 +23,14 @@ $app->get('/', function (Request $request, Response $response, $args) use ($conf
     return $view->render($response, 'overzicht.twig', [
         'style' => $algorithmRegister->getOrganizationStyle(),
         'organization' => $algorithmRegister->getOrganizationName(),
-        'items' => $algorithmRegister->getClient()->readApplications()
+        'items' => $algorithmRegister->readApplications()
     ]);
 });
 
 $app->get('/details/{id}', function (Request $request, Response $response, $args) use ($config, $algorithmRegister) {
     $view = Twig::fromRequest($request);
     $id = $args['id'];
-    $application = $algorithmRegister->getClient()->readApplication($id);
+    $application = $algorithmRegister->readApplication($id);
     $schema = json_decode(file_get_contents($application["schema"]), true);
     $grouped = [];
     foreach ($application as $key => $value) {
@@ -49,9 +49,9 @@ $app->get('/details/{id}', function (Request $request, Response $response, $args
 $app->get('/details/{id}/log', function (Request $request, Response $response, $args) use ($config, $algorithmRegister) {
     $view = Twig::fromRequest($request);
     $id = $args['id'];
-    $application = $algorithmRegister->getClient()->readApplication($id);
+    $application = $algorithmRegister->readApplication($id);
     try {
-        $events = $algorithmRegister->getClient()->readEvents($id);
+        $events = $algorithmRegister->readEvents($id);
     } catch (\Exception $exception) {
         $events = []; //FIXME 
     }
