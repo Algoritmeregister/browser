@@ -22,4 +22,10 @@ class AlgorithmRegister
         $organization = reset($this->_organizations); //FIXME this is a hack for single org instance
         return $organization["name"];
     }
+
+    public function getOrganizationStyle()
+    {
+        $organization = reset($this->_organizations); //FIXME this is a hack for single org instance
+        return $organization["style"];
+    }
 }

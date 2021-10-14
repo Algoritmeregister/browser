@@ -21,6 +21,7 @@ $algorithmRegister = new \AlgorithmRegister\AlgorithmRegister($config["organizat
 $app->get('/', function (Request $request, Response $response, $args) use ($config, $algorithmRegister) {
     $view = Twig::fromRequest($request);
     return $view->render($response, 'overzicht.twig', [
+        'style' => $algorithmRegister->getOrganizationStyle(),
         'organization' => $algorithmRegister->getOrganizationName(),
         'items' => $algorithmRegister->getClient()->readApplications()
     ]);
@@ -37,6 +38,7 @@ $app->get('/details/{id}', function (Request $request, Response $response, $args
     }
     //unset($grouped["METADATA"]);
     return $view->render($response, 'details.twig', [
+        'style' => $algorithmRegister->getOrganizationStyle(),
         'id' => $id,
         'title' => $application["name"],
         'description' => $application["description"],
@@ -54,6 +56,7 @@ $app->get('/details/{id}/log', function (Request $request, Response $response, $
         $events = []; //FIXME 
     }
     return $view->render($response, 'details-log.twig', [
+        'style' => $algorithmRegister->getOrganizationStyle(),
         'id' => $id,
         'title' => $application["name"],
         'description' => $application["description"],

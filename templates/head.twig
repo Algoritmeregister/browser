@@ -4,6 +4,9 @@
     <link rel='image_src' href='/img/algoreg-logo.png'/>
     <link rel='shortcut icon' type='image/png' href='/img/algoreg-logo.png'>
     <link rel="stylesheet" href="/css/style.css">
+    {% if style %}
+    <link rel="stylesheet" href="{{ style }}">
+    {% endif %}
     <script>
         window.addEventListener('load', function () {
             var sp = new URLSearchParams(window.location.search);

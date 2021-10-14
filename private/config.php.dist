@@ -1,7 +1,7 @@
 <?php
 
 $config = [
-    'organizations'] => [
+    'organizations' => [
         'gemeente-demodam' => [
             'name' => 'Gemeente Demodam',
             'client' => [

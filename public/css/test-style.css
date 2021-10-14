@@ -1,0 +1,17 @@
+.default-background {
+    background: #fff;
+}
+nav {
+    background: #fff;
+    border-bottom: 1px solid #aaa;
+}
+nav a {
+    color: #666;
+}
+.logo {
+    background: url(https://www.rotterdam.nl/_images/rotterdam_logo/logo.svg) top left no-repeat;
+    background-size: contain;
+    height: 20px;
+    width: 160px;
+    float: left;
+}
