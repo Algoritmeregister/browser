@@ -1,3 +1,0 @@
-id,name,description,organization,department,status,type,category,schema,revision_date
-"1","Bladiebloe",test,Gemeente Demodam,Wonen,test,AI,test,https://standaard.algoritmeregister.org/schemas/registration-v0.2.schema.json,"2022-01-01"
-"2","Nogwat",nog een test,Gemeente Demodam,Wonen,test,AI,test,https://standaard.algoritmeregister.org/schemas/registration-v0.2.schema.json,"2022-01-01"
